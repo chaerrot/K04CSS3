@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04Paragraph.html</title>
+</head>
+<body>
+    <!-- 
+        수평  방향에서의 정렬
+            블럭엘리먼트: 컨텐츠의 양에 상관 없이 하나의 블럭을 차지하므로
+                우측 공간이 충분하여 컨텐츠는 우측으로 정렬할 수 있다.
+            인라인엘리먼트: 컨텐츠의 크기 만큼만 영역을 차지하므로 컨텐츠가
+                움직일 공간이 없어 정렬되지 않는다. 만약 정렬이 필요하다면
+                부모엘리먼트에서 text-align을 설정해야 한다.
+     -->
+    <h2>문단 관련 CSS 속성들</h2>
+
+    <div style="border: 1px blue dotted; width: 400px;">
+        <h2>컨텐츠 수평방향 정렬</h2>
+        <!-- 우측정렬됨  -->
+        <div style="border: 1px solid red; text-align: right;">
+            블럭엘리먼트
+        </div>
+        <!-- 우측 공간이 부족하므로 정렬 안 됨. 정렬이 필요하다면 부모 엘리먼트를
+             추가한 후 부모 쪽에서 align을 적용해야 한다. -->
+        <!-- <div style="text-align: right;"> -->
+        <span style="border: 1px solid blue; text-align: right;">
+            인라인엘리먼트
+        </span>
+        <!-- </div> -->
+    </div>
+
+    <!-- 
+        line-height: 줄 간격. 즉 라인 사이의 간격을 띄우는데 블럭과 인라인은
+            조금 다르게 적용된다.
+            블럭엘리먼트: 컨텐츠의 영역 중 세로 영역이 늘어나서 마치 줄간격이
+                생긴 것처럼 보인다.
+            인라인엘리먼트: 컨텐츠의 영역은 변화가 없고, 지정된 크기만큼   
+                줄간격이 생겨 사이가 멀어진다.
+     -->
+    <h3>줄 사이의 간격</h3>
+    <h4 style="line-height: 5em; border: 1px solid blue;">
+        블럭엘리먼트1에 줄간격 적용
+    </h4>
+    <h4 style="border: 1px solid black;">블럭 엘리먼트2</h4>
+    <h4 style="border: 1px solid black;">블럭 엘리먼트3</h4>
+    
+    <div class="inline">
+        <span style="line-height: 5em; border: 1px solid black;">
+            인라인엘리먼트1</span><br />
+        <span style="border: 1px solid black;">인라인엘리먼트2</span>
+        <br />
+        <span style="border: 1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+    <h3>수직 상태에서의 가운데 정렬</h3>
+    <!-- div박스의 height와 line-height의 값을 동일하게 지정하면 세로 상태에서
+        가운데 정렬이 된다. 블럭엘리먼트에 line-height를 부여했을 때 영역이
+        늘어나는 부분을 활용한 것이다. -->
+    <h4>블럭엘리먼트 사용 시 방법1</h4>
+    <div style="border: 1px solid black; height: 200px; width: 200px;
+        line-height: 200px;">
+        나는 텍스트1
+    </div>
+
+    <!-- div박스 내부의 padding을 지정해서 텍스트를 아래쪽으로 밀어준다.
+        이 경우 세로 영역이 늘어나므로 사이즈는 별도로 조정해야 한다. -->
+    <h4>블럭엘리먼트 사용 시 방법2</h4>
+    <div style="border: 1px solid red; height: 100px; width: 200px;
+        padding-top: 100px;">
+        나는 텍스트2    
+    </div>
+
+    <!-- 인라인엘리먼트의 경우 세로 상태에서의 가운데 정렬은 vertical_align을 사용한다. -->
+    <!-- 
+        가로 정렬 시 text-align => left(디폴트), center, right
+        세로 정렬 시 vertical-align => top(디폴트), middle, bottom
+     -->
+    <h4>인라인엘리먼트 사용 시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height: 100px; vertical-align: top;">인라인엘리먼트 세로정렬
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: middle;">인라인엘리먼트 세로정렬
+            </td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: bottom;">인라인엘리먼트 세로정렬
+            </td>
+        </tr>
+    </table>
+
+    <!-- 각기 다른 길이의 단어를 사용함으로써 발생되는 우측의 불규칙적인
+        여백을 깔끔하게 정리해주는 역할을 한다. -->
+    <h2>배분정렬</h2>
+    <p style="border: 1px solid blue; text-align: justify;">
+        (베이징=연합뉴스) 조준형 특파원 = 국내 요소수 부족 사태는 일단 주공급원인 중국 내부 상황이 최대 원인으로 꼽히며, 국제정치와 이상 기후 등과도 일부 연결돼 있다는 분석이 나온다.
+        <br><br>
+        요소수의 원료인 요소는 중국산이 국내 수입량의 약 3분의 2를 차지하는데, 최근 중국이 요소에 대한 수출 전 검사를 의무화하면서 수급 문제가 벌어진 것이 국내 요소수 사태의 표면적 현상이다.
+        <br><br>
+        4일 코트라에 따르면 세계 최대 요소 생산국이자 수출국인 중국은 매년 약 500만 톤의 요소를 세계시장에 공급한다. 한국은 인도에 이은 중국의 2위 요소 수출대상국인데 올해 1∼9월 중국의 대 한국 요소 수출량은 56만4천톤(40.2% 증가)으로 중국 요소 수출 총량의 14%를 차지한 것으로 파악됐다.
+        <br><br>
+        이런 상황에서 중국 해관총서(관세청)는 지난달 11일 29종의 비료 품목에 대한 수출 검역 관리방식을 변경, 별도의 검역이나 검사 없이 수출이 가능했던 요소, 칼륨비료, 인산비료 등 총 29종의 비료 품목에 대해 10월 15일부터 반드시 검역을 거치도록 했다.
+        <br><br>
+        이는 중국의 비료난 속에 비료 수출을 억제하고 국내 시장에 우선적으로 공급하기 위한 수출제한 조치로 풀이된다고 코트라는 분석했다.
+        <br><br>
+        또 중국의 비료난은 중국이 현재 심각하게 겪고 있는 전력난과 연결된다.
+    </p>
+
+    <h2>들여쓰기</h2>
+    <!-- 블럭엘리먼트는 공간이 충분하므로 text-indent를 통해 들여쓰기 할 수 있다. -->
+    <div style="border: 1px solid red; text-indent: 1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    <!-- 인라인엘리먼트는 공간이 없으므로 부모엘리먼트에서 패딩을 적용해야 한다. -->
+    <div style="border: 1px solid blue; padding-left: 10px;">
+        <span style="text-indent: 1em;">
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator.html</title>
+    <style>
+        table, tr, th, td {
+            border-radius: 10px;
+        }
+        /*
+        input {
+            border: hidden;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        1*/
+        input[type='button']:hover {
+            cursor: pointer;
+        }
+        table {
+            background-color: #DDDDDD;
+            width: 400px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+        th {
+            background-color: #7B7B7B;
+        }
+        input.topbtn {
+            background-color: #7B7B7B;
+        }
+        td {
+            background-color: #373737;
+        }
+        .display {
+            height: 70px;
+            text-align: right;
+            background-color: #70C738;
+            color: #373737;
+        }
+        .inputlcd {
+            background-color: transparent;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: right;
+        }
+        td.operation {
+            background-color: #FA960A;
+            
+        }
+        .inputlcd {
+            height: 100%;
+            size: 100%;
+            border: hidden;
+            color: #373737;
+            font-size: 30px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <table cellpadding="10" cellspacing="7">
+        <tr>
+            <td class="display" colspan="4">
+                <!-- <div class="LCD"> -->
+                    <input class="inputlcd" type="text" name="lcd">
+                <!-- </div> -->
+            </td>
+        </tr>
+        <tr>
+            <th width="50%" colspan="2">
+                BackSpace
+                <!-- <input class="topbtn" type="button" value="BackSpace"> -->
+            </th>
+            <th colspan="2">
+                C
+                <!-- <input class="topbtn" type="button" value="C"> -->
+            </th>
+        </tr>
+        <tr>
+            <td>
+                1
+                </td>
+            <td>
+                2</td>
+            <td>3</td>
+            <td class="operation">/</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td class="operation">x</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td class="operation">+</td>
+        </tr>
+        <tr>
+            <td>=</td>
+            <td>0</td>
+            <td>.</td>
+            <td class="operation">-</td>
+        </tr>
+    </table>
+</body>
+</html>
